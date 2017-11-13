@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Win32.SafeHandles;
-using YelpSharp;
+using Nito.AsyncEx;
 
 //using Google.Apis.
 
@@ -14,9 +14,14 @@ namespace GoogleReviews_TestApp
     {
         static void Main(string[] args)
         {
-            var obj = new YelpAPIClient();
-            obj.PerformRequest();
+            AsyncContext.Run(() => PerformRequest());
             Console.Read();
+        }
+
+        private static async Task PerformRequest()
+        {
+            var obj = new YelpAPIClient();
+            await obj.PerformRequest();
         }
     }
 }

@@ -37,9 +37,9 @@ namespace GoogleReviews_TestApp
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
                 {
                     var x = JObject.Parse(streamReader.ReadToEnd());
-                    Console.WriteLine(x);
-                    /*var reviews = (JArray)x.GetValue("reviews");
-                    var z = GenerateGolfCourseReviewsList(reviews);*/
+                    //Console.WriteLine(x);
+                    var reviews = (JArray)x.GetValue("reviews");
+                    var z = GenerateGolfCourseReviewsList(reviews);
                     return "dude right there";
                 }
             }
