@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
+using Microsoft.Win32.SafeHandles;
+using YelpSharp;
 
 //using Google.Apis.
 
@@ -13,9 +14,8 @@ namespace GoogleReviews_TestApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
-
-            
+            var obj = new YelpAPIClient();
+            obj.PerformRequest();
             Console.Read();
         }
     }
